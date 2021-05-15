@@ -13,21 +13,21 @@ public class Principal {
         Medico[] ListaMedicos;
         Enfermero[] ListaEnfermeros;
         Scanner sc = new Scanner(System.in);
-        String nombreHospital, Direccion, Ciudad, Provincia;
-        String nombreMedico, Especialidad, nombreEnfermero, tipoContrato;
-        int NumeroEspecialidades, cant_med, cant_enf;
+        String nombreHospital, direccion, ciudad, provincia;
+        String nombreMedico, especialidad, nombreEnfermero, tipoContrato;
+        int numeroEspecialidades, cant_med, cant_enf;
         double sueldo_medico, sueldo_enfermero;
 
         System.out.print("Nombre del hospital: ");
         nombreHospital = sc.nextLine();
         System.out.print("Direccion del hospital: ");
-        Direccion = sc.nextLine();
+        direccion = sc.nextLine();
         System.out.print("Ciudad donde esta el hospital: ");
-        Ciudad = sc.nextLine();
+        ciudad = sc.nextLine();
         System.out.print("Provincia donde esta el hospital: ");
-        Provincia = sc.nextLine();
+        provincia = sc.nextLine();
         System.out.print("Cantidad de especialidades: ");
-        NumeroEspecialidades = sc.nextInt();
+        numeroEspecialidades = sc.nextInt();
         System.out.println("");
         System.out.print("Cantidad de médicos: ");
         cant_med = sc.nextInt();
@@ -39,11 +39,11 @@ public class Principal {
             nombreMedico = sc.nextLine();
             System.out.print("Ingrese la especialidad del médico " + (i + 1)
                     + ": ");
-            Especialidad = sc.nextLine();
+            especialidad = sc.nextLine();
             System.out.print("Ingrese el sueldo del médico " + (i + 1) + ": ");
             sueldo_medico = sc.nextDouble();
             Hospital h = new Hospital();
-            Medico m = new Medico(nombreMedico, Especialidad, sueldo_medico);
+            Medico m = new Medico(nombreMedico, especialidad, sueldo_medico);
             ListaMedicos[i] = m;
         }
         System.out.println("");
@@ -66,8 +66,8 @@ public class Principal {
                     sueldo_enfermero);
             ListaEnfermeros[i] = enf;
         }
-        Hospital hosp = new Hospital(nombreHospital, Direccion, Ciudad,
-                Provincia, NumeroEspecialidades, ListaMedicos, ListaEnfermeros);
+        Hospital hosp = new Hospital(nombreHospital, direccion, ciudad,
+                provincia, numeroEspecialidades, ListaMedicos, ListaEnfermeros);
         System.out.printf("\n%s\n", hosp);
     }
 }
